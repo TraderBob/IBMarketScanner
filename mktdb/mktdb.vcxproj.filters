@@ -13,10 +13,96 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\ibapi">
+      <UniqueIdentifier>{74d55d1b-61b1-4a2b-b1e3-b7321272ea2d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\posix_client">
+      <UniqueIdentifier>{0ff400de-2e50-4d4a-bd87-698620558be4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="mktdb.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ib_api_callback.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pch.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="posix_client\EClientSocketBase.cpp">
+      <Filter>Source Files\posix_client</Filter>
+    </ClCompile>
+    <ClCompile Include="posix_client\EPosixClientSocket.cpp">
+      <Filter>Source Files\posix_client</Filter>
+    </ClCompile>
+    <ClCompile Include="ib_client.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ibapi\CommissionReport.h">
+      <Filter>Header Files\ibapi</Filter>
+    </ClInclude>
+    <ClInclude Include="ibapi\CommonDefs.h">
+      <Filter>Header Files\ibapi</Filter>
+    </ClInclude>
+    <ClInclude Include="ibapi\Contract.h">
+      <Filter>Header Files\ibapi</Filter>
+    </ClInclude>
+    <ClInclude Include="ibapi\EClient.h">
+      <Filter>Header Files\ibapi</Filter>
+    </ClInclude>
+    <ClInclude Include="ibapi\EClientSocketBase.h">
+      <Filter>Header Files\ibapi</Filter>
+    </ClInclude>
+    <ClInclude Include="ibapi\EClientSocketBaseImpl.h">
+      <Filter>Header Files\ibapi</Filter>
+    </ClInclude>
+    <ClInclude Include="ibapi\EWrapper.h">
+      <Filter>Header Files\ibapi</Filter>
+    </ClInclude>
+    <ClInclude Include="ibapi\Execution.h">
+      <Filter>Header Files\ibapi</Filter>
+    </ClInclude>
+    <ClInclude Include="ibapi\IBString.h">
+      <Filter>Header Files\ibapi</Filter>
+    </ClInclude>
+    <ClInclude Include="ibapi\Order.h">
+      <Filter>Header Files\ibapi</Filter>
+    </ClInclude>
+    <ClInclude Include="ibapi\OrderState.h">
+      <Filter>Header Files\ibapi</Filter>
+    </ClInclude>
+    <ClInclude Include="ibapi\ScannerSubscription.h">
+      <Filter>Header Files\ibapi</Filter>
+    </ClInclude>
+    <ClInclude Include="ibapi\shared_ptr.h">
+      <Filter>Header Files\ibapi</Filter>
+    </ClInclude>
+    <ClInclude Include="ibapi\TagValue.h">
+      <Filter>Header Files\ibapi</Filter>
+    </ClInclude>
+    <ClInclude Include="ibapi\TwsSocketClientErrors.h">
+      <Filter>Header Files\ibapi</Filter>
+    </ClInclude>
+    <ClInclude Include="ib_api_callback.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ibapi\StdAfx.h">
+      <Filter>Header Files\ibapi</Filter>
+    </ClInclude>
+    <ClInclude Include="posix_client\EPosixClientSocket.h">
+      <Filter>Source Files\posix_client</Filter>
+    </ClInclude>
+    <ClInclude Include="posix_client\EPosixClientSocketPlatform.h">
+      <Filter>Source Files\posix_client</Filter>
+    </ClInclude>
+    <ClInclude Include="ib_client.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

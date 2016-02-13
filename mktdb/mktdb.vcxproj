@@ -20,7 +20,7 @@
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v110</PlatformToolset>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -47,15 +47,17 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <PrecompiledHeader>
-      </PrecompiledHeader>
+      <PrecompiledHeader>Use</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;IB_USE_STD_STRING;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>ibapi</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -76,7 +78,41 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ib_client.cpp" />
+    <ClCompile Include="ib_api_callback.cpp" />
     <ClCompile Include="mktdb.cpp" />
+    <ClCompile Include="pch.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="posix_client\EClientSocketBase.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="posix_client\EPosixClientSocket.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ib_client.h" />
+    <ClInclude Include="ibapi\CommissionReport.h" />
+    <ClInclude Include="ibapi\CommonDefs.h" />
+    <ClInclude Include="ibapi\Contract.h" />
+    <ClInclude Include="ibapi\EClient.h" />
+    <ClInclude Include="ibapi\EClientSocketBase.h" />
+    <ClInclude Include="ibapi\EClientSocketBaseImpl.h" />
+    <ClInclude Include="ibapi\EWrapper.h" />
+    <ClInclude Include="ibapi\Execution.h" />
+    <ClInclude Include="ibapi\IBString.h" />
+    <ClInclude Include="ibapi\Order.h" />
+    <ClInclude Include="ibapi\OrderState.h" />
+    <ClInclude Include="ibapi\ScannerSubscription.h" />
+    <ClInclude Include="ibapi\shared_ptr.h" />
+    <ClInclude Include="ibapi\StdAfx.h" />
+    <ClInclude Include="ibapi\TagValue.h" />
+    <ClInclude Include="ibapi\TwsSocketClientErrors.h" />
+    <ClInclude Include="ib_api_callback.h" />
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="posix_client\EPosixClientSocket.h" />
+    <ClInclude Include="posix_client\EPosixClientSocketPlatform.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
