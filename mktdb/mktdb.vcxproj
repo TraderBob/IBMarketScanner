@@ -114,6 +114,11 @@
     <ClInclude Include="posix_client\EPosixClientSocket.h" />
     <ClInclude Include="posix_client\EPosixClientSocketPlatform.h" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\thirdparty\tinyxml\tinyxml_lib.vcxproj">
+      <Project>{c406daec-0886-4771-8dea-9d7329b46cc1}</Project>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
